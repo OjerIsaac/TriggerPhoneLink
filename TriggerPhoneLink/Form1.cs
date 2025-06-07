@@ -62,5 +62,10 @@ namespace TriggerPhoneLink
         {
 
         }
+
+        private void pictureBoxFeaturesIcon_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

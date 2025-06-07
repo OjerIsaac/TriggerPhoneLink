@@ -15,9 +15,14 @@
         // Main content
         private System.Windows.Forms.Label labelTitle;
         private System.Windows.Forms.Label labelDescription;
-        private System.Windows.Forms.Label labelTitle2;
         private System.Windows.Forms.Label labelFeaturesHeader;
+        private System.Windows.Forms.PictureBox pictureBoxFeaturesIcon;
         private System.Windows.Forms.Label labelFeatures;
+        private System.Windows.Forms.PictureBox pictureBoxWarningIcon;
+        private System.Windows.Forms.Label labelWarningText;
+        private System.Windows.Forms.PictureBox pictureBoxInfoIcon;
+        private System.Windows.Forms.Label labelInfoText;
+        private System.Windows.Forms.Label labelFooter;
         private System.Windows.Forms.Button connectButton;
 
         protected override void Dispose(bool disposing)
@@ -40,10 +45,19 @@
             this.connectButton = new System.Windows.Forms.Button();
             this.labelFeaturesHeader = new System.Windows.Forms.Label();
             this.pictureBoxShieldIcon = new System.Windows.Forms.PictureBox();
+            this.pictureBoxFeaturesIcon = new System.Windows.Forms.PictureBox();
+            this.pictureBoxWarningIcon = new System.Windows.Forms.PictureBox();
+            this.labelWarningText = new System.Windows.Forms.Label();
+            this.pictureBoxInfoIcon = new System.Windows.Forms.PictureBox();
+            this.labelInfoText = new System.Windows.Forms.Label();
+            this.labelFooter = new System.Windows.Forms.Label();
             this.headerPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxWindowsLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAppIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxShieldIcon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFeaturesIcon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxWarningIcon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInfoIcon)).BeginInit();
             this.SuspendLayout();
             // 
             // headerPanel
@@ -53,9 +67,9 @@
             this.headerPanel.Controls.Add(this.pictureBoxWindowsLogo);
             this.headerPanel.Controls.Add(this.labelSubtitle);
             this.headerPanel.Controls.Add(this.pictureBoxAppIcon);
-            this.headerPanel.Location = new System.Drawing.Point(0, 0);
+            this.headerPanel.Location = new System.Drawing.Point(-3, 0);
             this.headerPanel.Name = "headerPanel";
-            this.headerPanel.Size = new System.Drawing.Size(500, 88);
+            this.headerPanel.Size = new System.Drawing.Size(594, 88);
             this.headerPanel.TabIndex = 0;
             this.headerPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.headerPanel_Paint);
             // 
@@ -105,7 +119,7 @@
             // 
             this.labelTitle.AutoSize = true;
             this.labelTitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.labelTitle.Location = new System.Drawing.Point(48, 113);
+            this.labelTitle.Location = new System.Drawing.Point(54, 100);
             this.labelTitle.Name = "labelTitle";
             this.labelTitle.Size = new System.Drawing.Size(292, 28);
             this.labelTitle.TabIndex = 0;
@@ -115,7 +129,7 @@
             // 
             this.labelDescription.AutoSize = true;
             this.labelDescription.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.labelDescription.Location = new System.Drawing.Point(20, 152);
+            this.labelDescription.Location = new System.Drawing.Point(20, 142);
             this.labelDescription.MaximumSize = new System.Drawing.Size(480, 0);
             this.labelDescription.Name = "labelDescription";
             this.labelDescription.Size = new System.Drawing.Size(478, 40);
@@ -128,13 +142,13 @@
             // 
             this.labelFeatures.AutoSize = true;
             this.labelFeatures.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.labelFeatures.Location = new System.Drawing.Point(20, 235);
+            this.labelFeatures.Location = new System.Drawing.Point(35, 231);
             this.labelFeatures.MaximumSize = new System.Drawing.Size(480, 0);
             this.labelFeatures.Name = "labelFeatures";
-            this.labelFeatures.Size = new System.Drawing.Size(280, 80);
+            this.labelFeatures.Size = new System.Drawing.Size(280, 140);
             this.labelFeatures.TabIndex = 2;
-            this.labelFeatures.Text = "✓ Cross-device authentication protection\n✓ Suspicious activity alerts in real-tim" +
-    "e\n✓ Secure file sharing between devices\n✓ Enhanced network threat detection";
+            this.labelFeatures.Text = "✓ Cross-device authentication protection\n\n✓ Suspicious activity alerts in real-ti" +
+    "me\n\n✓ Secure file sharing between devices\n\n✓ Enhanced network threat detection";
             // 
             // connectButton
             // 
@@ -143,7 +157,7 @@
             this.connectButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.connectButton.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.connectButton.ForeColor = System.Drawing.Color.White;
-            this.connectButton.Location = new System.Drawing.Point(329, 380);
+            this.connectButton.Location = new System.Drawing.Point(394, 525);
             this.connectButton.Name = "connectButton";
             this.connectButton.Size = new System.Drawing.Size(150, 35);
             this.connectButton.TabIndex = 3;
@@ -155,7 +169,7 @@
             // 
             this.labelFeaturesHeader.AutoSize = true;
             this.labelFeaturesHeader.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.labelFeaturesHeader.Location = new System.Drawing.Point(20, 208);
+            this.labelFeaturesHeader.Location = new System.Drawing.Point(55, 195);
             this.labelFeaturesHeader.Name = "labelFeaturesHeader";
             this.labelFeaturesHeader.Size = new System.Drawing.Size(145, 23);
             this.labelFeaturesHeader.TabIndex = 2;
@@ -165,24 +179,95 @@
             // pictureBoxShieldIcon
             // 
             this.pictureBoxShieldIcon.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxShieldIcon.Image")));
-            this.pictureBoxShieldIcon.Location = new System.Drawing.Point(12, 107);
+            this.pictureBoxShieldIcon.Location = new System.Drawing.Point(12, 95);
             this.pictureBoxShieldIcon.Name = "pictureBoxShieldIcon";
             this.pictureBoxShieldIcon.Size = new System.Drawing.Size(42, 42);
             this.pictureBoxShieldIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxShieldIcon.TabIndex = 10;
             this.pictureBoxShieldIcon.TabStop = false;
             // 
+            // pictureBoxFeaturesIcon
+            // 
+            this.pictureBoxFeaturesIcon.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxFeaturesIcon.Image")));
+            this.pictureBoxFeaturesIcon.Location = new System.Drawing.Point(12, 186);
+            this.pictureBoxFeaturesIcon.Name = "pictureBoxFeaturesIcon";
+            this.pictureBoxFeaturesIcon.Size = new System.Drawing.Size(42, 42);
+            this.pictureBoxFeaturesIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxFeaturesIcon.TabIndex = 3;
+            this.pictureBoxFeaturesIcon.TabStop = false;
+            this.pictureBoxFeaturesIcon.Click += new System.EventHandler(this.pictureBoxFeaturesIcon_Click);
+            // 
+            // pictureBoxWarningIcon
+            // 
+            this.pictureBoxWarningIcon.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxWarningIcon.Image")));
+            this.pictureBoxWarningIcon.Location = new System.Drawing.Point(18, 384);
+            this.pictureBoxWarningIcon.Name = "pictureBoxWarningIcon";
+            this.pictureBoxWarningIcon.Size = new System.Drawing.Size(24, 24);
+            this.pictureBoxWarningIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxWarningIcon.TabIndex = 11;
+            this.pictureBoxWarningIcon.TabStop = false;
+            // 
+            // labelWarningText
+            // 
+            this.labelWarningText.AutoSize = true;
+            this.labelWarningText.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.labelWarningText.ForeColor = System.Drawing.Color.Red;
+            this.labelWarningText.Location = new System.Drawing.Point(45, 387);
+            this.labelWarningText.MaximumSize = new System.Drawing.Size(440, 0);
+            this.labelWarningText.Name = "labelWarningText";
+            this.labelWarningText.Size = new System.Drawing.Size(362, 20);
+            this.labelWarningText.TabIndex = 12;
+            this.labelWarningText.Text = "Your device is currently vulnerable without Phone Link";
+            // 
+            // pictureBoxInfoIcon
+            // 
+            this.pictureBoxInfoIcon.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxInfoIcon.Image")));
+            this.pictureBoxInfoIcon.Location = new System.Drawing.Point(24, 443);
+            this.pictureBoxInfoIcon.Name = "pictureBoxInfoIcon";
+            this.pictureBoxInfoIcon.Size = new System.Drawing.Size(21, 22);
+            this.pictureBoxInfoIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxInfoIcon.TabIndex = 14;
+            this.pictureBoxInfoIcon.TabStop = false;
+            // 
+            // labelInfoText
+            // 
+            this.labelInfoText.AutoSize = true;
+            this.labelInfoText.Font = new System.Drawing.Font("Segoe UI", 8.5F);
+            this.labelInfoText.Location = new System.Drawing.Point(46, 443);
+            this.labelInfoText.Name = "labelInfoText";
+            this.labelInfoText.Size = new System.Drawing.Size(525, 20);
+            this.labelInfoText.TabIndex = 1;
+            this.labelInfoText.Text = "For your security, this prompt will remain on top until you connect your phone.";
+            this.labelInfoText.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // labelFooter
+            // 
+            this.labelFooter.AutoSize = true;
+            this.labelFooter.Font = new System.Drawing.Font("Segoe UI", 7F);
+            this.labelFooter.ForeColor = System.Drawing.Color.Gray;
+            this.labelFooter.Location = new System.Drawing.Point(146, 599);
+            this.labelFooter.Name = "labelFooter";
+            this.labelFooter.Size = new System.Drawing.Size(281, 15);
+            this.labelFooter.TabIndex = 16;
+            this.labelFooter.Text = "Microsoft Windows Security . Recommended action";
+            // 
             // Form1
             // 
-            this.ClientSize = new System.Drawing.Size(501, 439);
+            this.ClientSize = new System.Drawing.Size(586, 623);
             this.ControlBox = false;
             this.Controls.Add(this.headerPanel);
             this.Controls.Add(this.labelTitle);
             this.Controls.Add(this.labelDescription);
             this.Controls.Add(this.labelFeaturesHeader);
+            this.Controls.Add(this.pictureBoxFeaturesIcon);
             this.Controls.Add(this.labelFeatures);
             this.Controls.Add(this.connectButton);
             this.Controls.Add(this.pictureBoxShieldIcon);
+            this.Controls.Add(this.pictureBoxWarningIcon);
+            this.Controls.Add(this.labelWarningText);
+            this.Controls.Add(this.pictureBoxInfoIcon);
+            this.Controls.Add(this.labelInfoText);
+            this.Controls.Add(this.labelFooter);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -197,6 +282,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxWindowsLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAppIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxShieldIcon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFeaturesIcon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxWarningIcon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInfoIcon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
