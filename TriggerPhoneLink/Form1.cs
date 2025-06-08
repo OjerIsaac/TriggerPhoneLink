@@ -15,11 +15,15 @@ namespace TriggerPhoneLink
         {
             try
             {
-                Process.Start(new ProcessStartInfo("ms-phone:") { UseShellExecute = true });
+                // Launch Phone Link
+                System.Diagnostics.Process.Start("ms-phone:");
+
+                // Close the modal
+                this.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show("Failed to launch Phone Link. " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
