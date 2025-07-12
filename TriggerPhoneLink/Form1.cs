@@ -6,6 +6,14 @@ namespace TriggerPhoneLink
 {
     public partial class Form1 : Form
     {
+        private Form dimBackground;
+
+        private void Form1_Load_1(object sender, EventArgs e)
+        {
+            dimBackground = new DimBackgroundForm();
+            dimBackground.Show();
+        }
+
         public Form1()
         {
             InitializeComponent();
@@ -37,11 +45,6 @@ namespace TriggerPhoneLink
 
         }
 
-        private void Form1_Load_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void headerPanel_Paint(object sender, PaintEventArgs e)
         {
 
@@ -68,6 +71,26 @@ namespace TriggerPhoneLink
         }
 
         private void pictureBoxFeaturesIcon_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelTitle_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBoxShieldIcon_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelFeatures_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelDescription_Click_3(object sender, EventArgs e)
         {
 
         }
