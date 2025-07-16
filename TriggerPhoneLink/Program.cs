@@ -13,7 +13,16 @@ namespace TriggerPhoneLink
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+
+            DimBackgroundForm dimBackground = new DimBackgroundForm();
+            dimBackground.Show(); // Show the dimmer, non-modal
+
+            Form1 mainForm = new Form1(dimBackground); // Pass dimBackground to Form1
+
+            mainForm.ShowDialog(); // This locks the focus to Form1
+
+            // After Form1 is closed, close the background
+            dimBackground.Close();
         }
     }
 }

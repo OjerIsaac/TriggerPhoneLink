@@ -145,7 +145,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Phone Link";
             this.TopMost = true;
-            this.Load += new System.EventHandler(this.Form1_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPhoneIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxShieldIcon)).EndInit();
             this.ResumeLayout(false);
